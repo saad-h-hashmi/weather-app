@@ -1,0 +1,51 @@
+name: weather_app
+description: >
+  Premium Flutter Weather App — Clean Architecture, Glassmorphic UI,
+  Dynamic Animated Backgrounds, Offline Caching, and Smart Insights.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ── NETWORKING ─────────────────────────────────────────────────────────────
+  # Makes HTTP GET requests to the OpenWeatherMap REST API.
+  http: ^1.2.1
+
+  # ── STATE MANAGEMENT ───────────────────────────────────────────────────────
+  # ChangeNotifier + Provider pattern for clean, reactive UI updates.
+  provider: ^6.1.2
+
+  # ── OFFLINE CACHING ────────────────────────────────────────────────────────
+  # Persists the last successful JSON response to local device storage so the
+  # app remains usable with no network connection.
+  shared_preferences: ^2.3.1
+
+  # ── GEOLOCATION ────────────────────────────────────────────────────────────
+  # Requests GPS position from the device (triggers browser permission dialog
+  # on Chrome). Falls back to Lahore if permission is denied.
+  geolocator: ^11.0.0
+
+  # ── LOADING ANIMATION ──────────────────────────────────────────────────────
+  # Shimmer skeleton effect displayed while API data is being fetched.
+  shimmer: ^3.0.0
+
+  # ── TEMPERATURE CHART ──────────────────────────────────────────────────────
+  # Smooth curved line chart with gradient fill for the 24-hour forecast.
+  fl_chart: ^0.68.0
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  # No custom assets or fonts are required — the app uses only system fonts
+  # and Material icons, keeping the bundle lightweight for web deployment.
